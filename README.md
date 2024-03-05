@@ -8,22 +8,23 @@ git clone https://github.com/h3mantD/laravel-ai-hackathon.git
 
 ### Running Frontend
 
-```bash
-cd laravel-ai-hackathon/frontend
-npm install
-```
+-   Open a new terminal and go to frontend folder
+    ```bash
+    cd laravel-ai-hackathon/frontend
+    npm install
+    ```
+-   Create a .env file in the frontend folder
 
-### Change the API URL in the frontend/src/api.js file
+    ```bash
+    cp frontend/.env.example frontend/.env
+    ```
 
-```js
-import axios from "axios";
+-   Add Backend API's URL to the VITE_API_ROOT in the frontend/.env file
 
-const api = axios.create({
-    baseURL: "https://<backend-api-servers-url>",
-});
-
-export default api;
-```
+-   Start the server
+    ```bash
+    npm run dev
+    ```
 
 ### Running Backend API
 
@@ -51,7 +52,7 @@ cp .env.example .env
     JINA_ACESS_TOKEN=
     ```
 
-- Setup Chroma DB and add it's configuraiton in .env
+-   Setup Chroma DB and add it's configuraiton in .env
     ```bash
     CHROMA_HOST=http://localhost
     CHROMA_PORT=8080
